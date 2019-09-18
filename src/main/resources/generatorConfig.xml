@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <classPathEntry location="D:\maven\MavenLocalRepository\repository\mysql\mysql-connector-java\8.0.17\mysql-connector-java-8.0.17.jar" />
+    <context id="context1" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <jdbcConnection
+                connectionURL="jdbc:mysql://localhost:3306/book?serverTimezone=GMT&amp;useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=true&amp;nullCatalogMeansCurrent=true"
+                driverClass="com.mysql.cj.jdbc.Driver" password="xuchao123" userId="root"/>
+        <javaModelGenerator targetPackage="com.example.springboots.model" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <sqlMapGenerator targetPackage="com.example.springboots.mapper" targetProject="src/main/java"/>
+        <javaClientGenerator targetPackage="com.example.springboots.mapper" targetProject="src/main/java"
+                             type="ANNOTATEDMAPPER"/> <!-- 注解ANNOTATEDMAPPER -->
+        <table tableName="%">
+            <generatedKey column="id" sqlStatement="Mysql"/>
+        </table>
+    </context>
+</generatorConfiguration>
